@@ -15,7 +15,7 @@ const translations = {
     featuringBrands: "Featuring the Best Brands",
     selectPreferred: "Select your preferred brand and explore our collection.",
     backToList: "← Back To List",
-    backToHome: "← Back To Home",
+
     specification: "Specification",
     musicians: "Who plays it?",
     loading: "Loading...",
@@ -28,11 +28,7 @@ const translations = {
     heroTitleStart: "Browse top quality",
   heroTitleHighlight: "Guitars",
   heroTitleEnd: "online",
-  heroSubtitle: "Explore 50k+ latest collections of branded guitars online with VibeStrings.",
-   heroTitleStart: "Browse top quality",
-  heroTitleHighlight: "Guitars",
-  heroTitleEnd: "online",
-  heroSubtitle: "Explore 50k+ latest collections of branded guitars online with VibeStrings.",
+  
    backToHome: "← Back To Home",
     brandContent: {
       Ibanez: {
@@ -79,8 +75,7 @@ const translations = {
  heroTitleStart: "Прелистај квалитетни",
   heroTitleHighlight: "гитари",
   heroTitleEnd: "онлајн",
-  heroSubtitle: "Истражи повеќе од 50k најнови колекции на брендови со VibeStrings.",
-    backToHome: "← Назад на почетна",
+
     brandContent: {
       Ibanez: {
         heading: <>Свири како <span className="highlight">Рок ѕвезда</span></>,
@@ -124,8 +119,7 @@ const translations = {
 heroTitleStart: "Shfleto",
   heroTitleHighlight: "kitarat me cilësi të lartë",
   heroTitleEnd: "online",
-  heroSubtitle: "Eksploro mbi 50k koleksione të fundit të kitarave të markave me VibeStrings.",
-  backToHome: "← Kthehu në faqen kryesore",
+
     brandContent: {
       Ibanez: {
         heading: <>Luaj si një <span className="highlight">yll Rock</span></>,

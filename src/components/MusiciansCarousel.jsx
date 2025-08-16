@@ -1,7 +1,7 @@
 // GuitarSpecification.jsx - musicians carousel part
 import React, { useState } from "react";
 import "../styles/musiciansCarousel.css";
-import { useLanguage } from "../context/Languagecontext";
+
 
 export default function MusiciansCarousel({ musicians }) {
   const [page, setPage] = useState(0);

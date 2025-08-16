@@ -1,11 +1,12 @@
-// src/pages/GuitarDetails/GuitarOverview.jsx
+
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
-import "../styles/guitarOverview.css"; // now uses its own file
+import "../styles/guitarOverview.css"; 
 import logoIcon from "../assets/Butterfly.png";
-import logoText from "../assets/VibeStrings.png";
 import { useLanguage } from "../context/Languagecontext";
+
+
 
 const GET_GUITAR_INFO = gql`
   query GetGuitar($brandId: ID!, $modelId: ID!) {
@@ -22,6 +23,8 @@ const GET_GUITAR_INFO = gql`
 
 export default function GuitarOverview() {
   const { brandId, modelId } = useParams();
+  const { t } = useLanguage(); // t() returns the translated string
+
 
   const { loading, error, data } = useQuery(GET_GUITAR_INFO, {
     variables: { brandId, modelId },
@@ -38,8 +41,9 @@ export default function GuitarOverview() {
     <section className="guitar-overview-section">
       <div className="guitar-overview-text">
         <Link to={`/brand/${brandId}`} className="guitar-back-link">
-          ← Back To List
-        </Link>
+   {t("backToList")}
+</Link>
+
 
         <div className="guitar-info-block">
           <div className="guitar-logo">
