@@ -42,6 +42,8 @@ This project was built as part of an internship application to demonstrate skill
 * Responsive, clean UI with loading/error handling
 
 ---
+##
+* Translated to MK and SQ
 
 
 ## 🚀 Getting Started

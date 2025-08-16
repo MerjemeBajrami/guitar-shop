@@ -1,9 +1,9 @@
-// src/pages/GuitarDetails/GuitarSpecification.jsx
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import "../styles/guitarSpecification.css";
 import MusiciansCarousel from "../components/MusiciansCarousel";
+import { useLanguage } from "../context/Languagecontext";
 
 const GET_GUITAR_SPECIFICATION = gql`
   query GetGuitarSpecification($brandId: ID!, $modelId: ID!) {
@@ -29,19 +29,20 @@ const GET_GUITAR_SPECIFICATION = gql`
 `;
 
 export default function GuitarSpecification() {
+  const { t } = useLanguage(); // translation function
   const { brandId, modelId } = useParams();
   const [activeTab, setActiveTab] = useState("specification");
 
   const { loading, error, data } = useQuery(GET_GUITAR_SPECIFICATION, {
     variables: { brandId, modelId },
-    skip: !brandId || !modelId
+    skip: !brandId || !modelId,
   });
 
-  if (loading) return <p>Loading specifications...</p>;
-  if (error) return <p>Error loading specs: {error.message}</p>;
+  if (loading) return <p>{t("loading")}</p>;
+  if (error) return <p>{t("error")}: {error.message}</p>;
 
   const guitar = data?.findUniqueModel;
-  if (!guitar) return <p>No specification found.</p>;
+  if (!guitar) return <p>{t("error")}</p>;
 
   const { specs, musicians } = guitar;
 
@@ -53,13 +54,13 @@ export default function GuitarSpecification() {
           className={activeTab === "specification" ? "active-tab" : "inactive-tab"}
           onClick={() => setActiveTab("specification")}
         >
-          Specification
+          {t("specification")}
         </h2>
         <h2
           className={activeTab === "musicians" ? "active-tab" : "inactive-tab"}
           onClick={() => setActiveTab("musicians")}
         >
-          Who plays it?
+          {t("musicians")}
         </h2>
       </div>
 
@@ -68,24 +69,23 @@ export default function GuitarSpecification() {
         <div className="guitar-spec-content">
           <p className="guitar-spec-description">{guitar.description}</p>
           <ul className="guitar-spec-list">
-            <li>Body Wood: "{specs.bodyWood}"</li>
-            <li>Neck Wood: "{specs.neckWood}"</li>
-            <li>Fingerboard: "{specs.fingerboardWood}"</li>
-            <li>Pickups: "{specs.pickups}"</li>
-            <li>Tuners: "{specs.tuners}"</li>
-            <li>Scale Length: "{specs.scaleLength}"</li>
-            <li>Bridge: "{specs.bridge}"</li>
+            <li>{t("Body Wood")}: "{specs.bodyWood}"</li>
+            <li>{t("Neck Wood")}: "{specs.neckWood}"</li>
+            <li>{t("Fingerboard")}: "{specs.fingerboardWood}"</li>
+            <li>{t("Pickups")}: "{specs.pickups}"</li>
+            <li>{t("Tuners")}: "{specs.tuners}"</li>
+            <li>{t("Scale Length")}: "{specs.scaleLength}"</li>
+            <li>{t("Bridge")}: "{specs.bridge}"</li>
           </ul>
         </div>
       )}
 
       {/* Musicians Tab Content */}
       {activeTab === "musicians" && (
-  <div className="musicians-tab">
-    <MusiciansCarousel musicians={musicians} />
-  </div>
-)}
-
+        <div className="musicians-tab">
+          <MusiciansCarousel musicians={musicians} />
+        </div>
+      )}
     </section>
   );
 }

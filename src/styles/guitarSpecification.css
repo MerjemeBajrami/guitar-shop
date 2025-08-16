@@ -16,14 +16,14 @@ padding-right: 4rem;
 
 
 .active-tab {
-  color: #ff6f3c;
+  color: #FF8A5D;
 }
 
 .active-tab::after {
   content: "";
   display: block;
   height: 5px;
-  background-color: #ff6f3c;
+  background-color: #FF8A5D;
   width: 100%;
   margin-top: 5px;
 }
@@ -65,7 +65,7 @@ padding-right: 4rem;
 }
 
 .guitar-spec-tabs h2:hover {
-  color: #ff6f3c;
+  color: #FF8A5D;
 }
 .musicians-tab{
   margin: 0 auto;

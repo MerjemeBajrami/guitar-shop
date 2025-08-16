@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import "../styles/guitar_selection.css";
-import { Link } from "react-router-dom";
-
+import { useLanguage } from "../context/Languagecontext";
 
 const GET_MODELS_BY_BRAND = gql`
   query GetModelsByBrand($id: ID!, $sortBy: sortBy!) {
@@ -18,6 +17,7 @@ const GET_MODELS_BY_BRAND = gql`
 `;
 
 export default function GuitarSelection() {
+  const { t } = useLanguage(); // translation function
   const { brandId } = useParams();
   const [page, setPage] = useState(1);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -33,10 +33,10 @@ export default function GuitarSelection() {
     },
   });
 
-  if (loading) return <p>Loading guitars...</p>;
+  if (loading) return <p>{t("loading")}</p>;
   if (error) {
     console.error(error);
-    return <p>Error loading guitars.</p>;
+    return <p>{t("error")}</p>;
   }
 
   let guitars = data.findBrandModels;
@@ -63,7 +63,7 @@ export default function GuitarSelection() {
   const handleSelect = (value) => {
     setSelectedValue(value);
     setDropdownOpen(false);
-    setPage(1); // reset to first page after filtering
+    setPage(1);
   };
 
   return (
@@ -71,7 +71,7 @@ export default function GuitarSelection() {
       <section className="brand-selection">
         <div className="selec">
           <h2>
-            Check out the <span className="highlight">Selection</span>
+            {t("showing")} <span className="highlight">{t("available")}</span>
           </h2>
           <div className="brand-selection-controls">
             <div
@@ -82,7 +82,7 @@ export default function GuitarSelection() {
                 {selectedValue
                   ? selectedValue.charAt(0).toUpperCase() +
                     selectedValue.slice(1)
-                  : "Filter by type"}
+                  : t("filterBy")}
               </div>
 
               {dropdownOpen && (
@@ -96,12 +96,12 @@ export default function GuitarSelection() {
 
             <input
               type="text"
-              placeholder="Search by name"
+              placeholder={t("searchBy")}
               className="search-input"
               value={searchTerm}
               onChange={(e) => {
                 setSearchTerm(e.target.value);
-                setPage(1); // reset to first page on search
+                setPage(1);
               }}
             />
           </div>
@@ -109,23 +109,27 @@ export default function GuitarSelection() {
       </section>
 
       <section className="guitar-selection">
-        <h2>Available Guitars</h2>
+        <h2>{t("available")}</h2>
         <div className="guitar-grid">
           {guitarsToShow.map((guitar) => (
             <Link to={`/brand/${brandId}/model/${guitar.id}`} key={guitar.id}>
-  <div className="guitar-card">
-    <img src={guitar.image} alt={guitar.name} />
-    <h3 style={{ textDecoration: 'none', borderBottom: 'none' }}>{guitar.name}</h3>
-    <p style={{ textDecoration: 'none', borderBottom: 'none' }}>${guitar.price}</p>
-  </div>
-</Link>
+              <div className="guitar-card">
+                <img src={guitar.image} alt={guitar.name} />
+                <h3 style={{ textDecoration: "none", borderBottom: "none" }}>
+                  {guitar.name}
+                </h3>
+                <p style={{ textDecoration: "none", borderBottom: "none" }}>
+                  ${guitar.price}
+                </p>
+              </div>
+            </Link>
           ))}
-          {guitarsToShow.length === 0 && <p>No guitars found.</p>}
+          {guitarsToShow.length === 0 && <p>{t("error")}</p>}
         </div>
 
         <div className="pagination-container">
           <p className="results-info">
-            SHOWING <span>{guitarsToShow.length}</span> RESULTS FROM{" "}
+            {t("showing")} <span>{guitarsToShow.length}</span> {t("resultsFrom")}{" "}
             <span>{guitars.length}</span>
           </p>
 

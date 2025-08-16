@@ -5,6 +5,7 @@ import { useQuery, gql } from "@apollo/client";
 import "../styles/guitarOverview.css"; // now uses its own file
 import logoIcon from "../assets/Butterfly.png";
 import logoText from "../assets/VibeStrings.png";
+import { useLanguage } from "../context/Languagecontext";
 
 const GET_GUITAR_INFO = gql`
   query GetGuitar($brandId: ID!, $modelId: ID!) {
@@ -43,7 +44,7 @@ export default function GuitarOverview() {
         <div className="guitar-info-block">
           <div className="guitar-logo">
             <img src={logoIcon} alt="VibeStrings logo" />
-            <img src={logoText} alt="VibeStrings text" />
+           <p className="vibeStrings">VibeStrings</p>
           </div>
           <h1 className="guitar-heading">
             {guitar.name} <span className="guitar-highlight">{guitar.type}</span>

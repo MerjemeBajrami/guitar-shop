@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import '../styles/brandGrid.css';
+import { useLanguage } from "../context/Languagecontext";
 
 const GET_BRANDS = gql`
   query {
@@ -14,17 +15,20 @@ const GET_BRANDS = gql`
 `;
 
 export default function BrandGrid() {
+  const { t } = useLanguage();
   const { loading, error, data } = useQuery(GET_BRANDS);
 
-  if (loading) return <p className="loading">Loading brands...</p>;
-  if (error) return <p className="error">Error loading brands.</p>;
+  if (loading) return <p className="loading">{t("loading")}</p>;
+  if (error) return <p className="error">{t("error")}</p>;
 
   return (
     <section className="brand-section">
       <h2>
-        Featuring the <span className="highlight">Best Brands</span>
+        {t("featuringBrands").split("Best Brands").map((part, i) => 
+          i === 0 ? part : <span key={i} className="highlight">Best Brands</span>
+        )}
       </h2>
-      <p>Select your preferred brand and explore our collection.</p>
+      <p>{t("selectPreferred")}</p>
       <div className="brand-grid">
         {data.findAllBrands.slice(0, 8).map((brand) => (
           <Link

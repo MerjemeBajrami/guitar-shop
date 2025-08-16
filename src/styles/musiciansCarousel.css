@@ -8,7 +8,7 @@
 .musician-list {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 50px;
 
   flex-wrap: wrap; /* keep nice behavior on small screens */
 }
@@ -17,7 +17,9 @@
   width: 492px;  
   height: 549px;            /* fixed card width */
   flex-shrink: 0;
-  background-color: #fff5f0;
+  background-color: #FFEFE8;
+
+  border: 1px solid rgb(233, 231, 231);
   border-radius: 4px;
   padding: 20px;
   text-align: center;

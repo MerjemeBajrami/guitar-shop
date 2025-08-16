@@ -17,7 +17,7 @@ export default function GuitarSelection() {
         <GuitarSpecification />
         
       </main>
-      <Footer />
+   
     </>
   );
 }
