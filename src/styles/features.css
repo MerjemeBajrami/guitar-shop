@@ -1,0 +1,68 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap');
+
+.features-section {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+height: 503px;
+margin: 0 auto;
+ display: flex;
+  align-items: center;  /* vertically center */
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Satoshi', sans-serif;
+
+}
+
+.features-title {
+  font-size: 44px;
+    font-weight: 400;
+    font-style: regular;
+  margin-bottom: 3rem;
+}
+
+.features-title .highlight {
+  color: #FF6428;
+}
+
+.features-grid {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  max-width: 250px;
+  padding: 1rem;
+}
+
+.feature-icon {
+  background-color: #262626;
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+  font-size: 28px;
+  color: #ccc;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+margin-top: 2rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  font-style: bold;
+  letter-spacing: 8%;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #666666;
+
+  font-style: regular;
+  font-weight: 400;
+}

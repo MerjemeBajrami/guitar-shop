@@ -1,0 +1,295 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap');
+
+.guitar-selection {
+font-family: 'Satoshi', sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  width: 88vw;
+  margin: 0 auto;
+}
+
+.guitar-selection h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.guitar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
+  gap: 1rem;
+  justify-items: center;
+}
+
+.guitar-card {
+
+  border-radius: 12px;
+  padding: 1rem;
+  height: 280px;
+  cursor: pointer;
+
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.guitar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.guitar-card img {
+  width: 364px;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+}
+
+.guitar-card h3 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color:#121212;
+  
+}
+
+.guitar-card p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666666;
+  
+}
+.brand-selection {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Satoshi', sans-serif;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.brand-selection h2 {
+  font-size: 44px;
+  font-weight: 700;
+  font-style: bold;
+  justify-self: flex-start;
+  margin-left: 2.5rem;
+ 
+  
+ 
+}
+
+.brand-selection .highlight {
+  color: #ff5a1f; /* Orange accent */
+}
+
+.brand-selection-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  justify-self: flex-start;
+}
+
+.filter-select,
+.search-input {
+  position: relative;
+
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: white;
+  outline: none;
+  transition: all 0.2s ease;
+}
+.search-input{
+  text-align: center;
+}
+
+/* Filter select with both icons */
+.filter-select {
+  background-image: url('../assets/filter.png'), url('../assets/Vector.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: 1.2rem center, right 1.2rem center; /* filter left, arrow right */
+  background-size: 24.6px, 23.3px;
+  appearance: none; /* hide default arrow */
+  cursor: pointer;
+  width: 334px;
+  height: 74px;
+}
+
+
+.search-input {
+  background-image: url('../assets/search.svg');
+  background-repeat: no-repeat;
+  background-position: 1.2rem center;
+  background-size: 24.6px;
+  width: 485px;
+  height: 74px;
+  box-sizing: border-box;
+}
+
+.filter-select:focus,
+.search-input:focus {
+  border-color: #FF6C33;
+}
+
+/* Common placeholder style for input */
+.search-input::placeholder {
+  font-size: 28px;
+  text-align: center;
+  font-weight: 400;
+  color: #B8B8C0; /* optional placeholder color */
+}
+
+/* Styling for <select> text (including placeholder option) */
+.filter-select {
+  font-size: 28px;
+  font-weight: 300;
+  text-align: center;
+  color: #B8B8C0; /* text color */
+}
+
+/* Optional: lighter color for the placeholder option */
+.filter-select option[value=""] {
+  color: #B8B8C0;
+}
+
+.selec{
+  width: 65vw;
+  
+}
+
+/* Pagination container with results text */
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  font-family: 'Satoshi', sans-serif;
+}
+
+/* Results info text */
+.results-info {
+  font-size: 14px;
+  font-weight: 400;
+  color: #B8B8C0;
+  letter-spacing: 1px;
+}
+
+.results-info span {
+  color: #121212; /* highlight numbers in darker color */
+  font-weight: 500;
+}
+
+/* Pagination buttons wrapper */
+.pagination-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+/* Individual pagination button */
+.page-btn {
+  border: 1px solid #E5E5E5;
+  background-color: white;
+  color: #121212;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  min-width: 36px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+.page-btn:hover {
+  border-color: #FF6C33;
+  color: #FF6C33;
+}
+
+/* Active page */
+.page-btn.active {
+  border-color: #FF6C33;
+  background-color: #FFF5F0;
+  color: #FF6C33;
+}
+
+/* Disabled button */
+.page-btn.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Wraps the select replacement */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Keep your original closed style for filter-select */
+.filter-select {
+  font-size: 28px;
+  font-weight: 400;
+  box-sizing: border-box;
+  text-align: center;
+  color: #b8b8c0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 334px;
+  height: 74px;
+  line-height: 74px;
+  padding: 0 3rem;
+  background-image: url('../assets/filter.svg'), url('../assets/Vector.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: 1.2rem center, right 1.2rem center;
+  background-size: 24.6px, 23.3px;
+  cursor: pointer;
+}
+
+/* Opened dropdown menu */
+.dropdown-menu {
+  position: absolute;
+ width: 100%;
+  top: calc(100% + 4px);
+  left: 0;
+
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 100;
+}
+
+/* Each option */
+.dropdown-menu li {
+ text-align: left;
+  padding: 14px 1.2rem;
+  font-size: 26.6px;
+  font-weight: 450;
+  color: #7a7a87;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover effect for options */
+.dropdown-menu li:hover {
+  background-color: #fff2ed;
+  color: #FF6C33;
+}
+
+/* Search input focused */
+.search-input:focus {
+  border-color: #FF6C33;
+  color: #FF6C33; /* text becomes orange */
+  background-image: url('../assets/search-orange.png'); /* swap icon */
+}
+
+/* Dropdown focused / open */
+.filter-select:focus,
+.custom-dropdown.open .filter-select {
+  border-color: #FF6C33;
+  color: #FF6C33; /* text becomes orange */
+  background-image: url('../assets/filter-orange.png'), url('../assets/Vector-orange.png'); /* swap icons */
+}

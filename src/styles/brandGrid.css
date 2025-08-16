@@ -1,0 +1,82 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap');
+
+.brand-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  font-family: 'Satoshi', sans-serif;
+  padding-bottom: 170px;
+}
+
+/* Title Styling */
+.brand-section h2 {
+  font-size: 44px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+.brand-section .highlight {
+  color: #FF6428; /* Vibrant orange to highlight "Best Brands" */
+}
+
+/* Subtitle Paragraph */
+.brand-section p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+.brand-grid {
+   margin: 0 auto;
+    width: 1275px;
+    
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Exactly 4 columns */
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+}
+
+/* Responsive: Stack or reduce columns on smaller screens */
+@media (max-width: 992px) {
+  .brand-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
+}
+a:-webkit-any-link{
+  text-decoration: none;
+
+}
+@media (max-width: 576px) {
+  .brand-grid {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
+}
+
+
+/* Brand Card (Image Container) */
+.brand-card {
+   width: 170px;
+   height:143px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+/* Logo Images */
+.brand-image1 {
+  width: 100%;
+
+  filter: grayscale(100%);
+  opacity: 0.4;
+  transition: all 0.3s ease-in-out;
+}
+
+.brand-image1:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  cursor: pointer;
+}

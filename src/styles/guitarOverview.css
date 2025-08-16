@@ -1,0 +1,127 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Satoshi';
+}
+
+.guitar-overview-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 70vh;
+  background: white;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* LEFT SIDE */
+.guitar-overview-text {
+  width: 53vw;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+}
+
+.guitar-info-block {
+  width: 536px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.guitar-back-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: #FF6428;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.guitar-back-link:hover {
+  color: #e55520;
+}
+
+/* Logo */
+.guitar-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.guitar-logo img {
+  height: 28px;
+  margin-right: 8px;
+  
+}
+
+.guitar-heading {
+  font-size: 56px;  
+  font-weight: 700;
+}
+
+.guitar-description {
+  font-size: 16px;
+  color: #666666;
+  font-weight: 500;
+}
+
+.guitar-highlight {
+  color: #FF6428;
+}
+
+.guitar-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* RIGHT SIDE */
+.guitar-overview-image {
+  width: 672px;
+  height: 459px;
+  
+}
+
+.guitar-orange-bg {
+  width: 672px;
+  height: 459px;
+  border-bottom-right-radius: 151px;
+  border-bottom-left-radius: 360px;
+  background: linear-gradient(0deg, #FF5B1C 0%, #FF8C60 100%) !important;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guitar-orange-bg > img:first-child {
+  width: 477px;
+  height: auto;
+  transform: rotate(-50deg); /* clockwise tilt */
+  transform-origin: center center;
+  margin-left: 6rem;
+  margin-bottom: 2rem;
+ 
+  
+  display: block;
+}
+
+.guitar-curve-icon {
+  z-index: 100000;
+  position: absolute;
+  top: 420px;
+  left: 60%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 50%;
+  padding: 25px;
+}
+
+.guitar-curve-icon img {
+  height: 24px;
+}

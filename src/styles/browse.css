@@ -1,0 +1,66 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap');
+
+.browse-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5rem 9%;
+  background-color: white;
+  font-family: 'Satoshi', sans-serif;
+}
+
+.browse_text {
+  width: 484px;
+  height: 318px;
+  
+}
+
+.browse-title {
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 140%;
+  text-align: center;
+  font-style: regular;
+  color: #000;
+}
+
+.browse-title .highlight {
+  color: #FF6428; /* orange shade like in screenshot */
+}
+
+.download {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.download img {
+  height: 50px;
+  cursor: pointer;
+}
+
+.browse-section > img {
+  width: 568px;
+
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .browse-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .browse_text {
+    max-width: 100%;
+  }
+
+  .download {
+    justify-content: center;
+  }
+
+  .browse-section > img {
+    margin-top: 2rem;
+    max-width: 100%;
+  }
+}

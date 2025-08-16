@@ -1,0 +1,109 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap');
+.guitar-spec-section {
+
+  font-family: 'Satoshi';
+
+}
+
+/* Tabs */
+.guitar-spec-tabs {
+  display: flex;
+  align-items: center;
+padding-right: 4rem;
+  margin-bottom: 1rem;
+}
+
+
+
+.active-tab {
+  color: #ff6f3c;
+}
+
+.active-tab::after {
+  content: "";
+  display: block;
+  height: 5px;
+  background-color: #ff6f3c;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.inactive-tab {
+  color: #999;
+ 
+
+}
+
+
+.guitar-spec-list {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+.guitar-spec-list li {
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Players Section */
+.guitar-players {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.guitar-spec-tabs h2 {
+  font-size: 24.15px;
+  font-weight: 700;
+  width: 712px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.guitar-spec-tabs h2:hover {
+  color: #ff6f3c;
+}
+.musicians-tab{
+  margin: 0 auto;
+  padding-right: 0;
+}
+
+.inactive-tab::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #ccc; /* gray line */
+  width: 100%;
+  margin-top: 5px;
+ 
+}
+
+.guitar-spec-tabs h2.inactive-tab { font-weight: 300; }
+
+.guitar-spec-content {
+  padding-left: 8rem;
+  padding-right: 6rem;
+  padding-bottom: 8rem;
+  height: 95vh;
+  padding-top: 3rem;
+  /* same width for everything */
+  width: 100%;        /* responsive */
+  box-sizing: border-box;
+}
+
+.guitar-spec-content p,
+.guitar-spec-content ul {
+  width: 100%;    /* inherit width of container */
+}
+.guitar-spec-content p,
+.guitar-spec-content li {
+  font-weight: 300;
+  font-size: 24px;
+
+}
+
+

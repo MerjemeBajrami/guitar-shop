@@ -1,0 +1,142 @@
+.footer {
+  background-color: #EEEEEE;
+  padding: 5rem 12% 0.1rem;
+  font-family: 'Satoshi', sans-serif;
+  color: #555;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 6rem;
+
+
+}
+
+.footer-container {
+  display: flex;
+  height: 149px;
+ 
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+
+}
+
+.footer-logo img {
+  height: 40px;
+}
+
+.footer-logo h2 {
+  font-size: 40px;
+  font-weight: 400;
+  font-style: regular;
+  color: #121212;
+  text-align: center;
+  margin: 0;
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.3rem 0;
+}
+.sms, .location{
+    margin-bottom: 1rem;
+}
+
+.sms img, .location img {
+  height: 24px;
+
+ 
+}
+.sms p, .location p {
+  font-size: 16px;
+  color: #666666;
+cursor: pointer;
+  font-weight: 400;
+  font-style: regular;
+}
+
+.footer-section h4 {
+  font-weight: 700;
+  font-size: 18px;
+margin: 0;
+  font-style: bold;
+  color: #000;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+ 
+
+}
+
+.footer-section ul li {
+    font-size: 16px;
+    color:#12121299;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 1rem;
+
+  cursor: pointer;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+
+}
+.footer-social img {
+  width: 32px;
+  cursor: pointer;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 1.5rem;
+  color: #12121299;
+  font-style: normal;
+    font-weight: 400;
+}
+.sms, .location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-contact p {
+    justify-content: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}
+
+.sms p:hover, .location p:hover {
+
+  color: #FF6428; 
+}
+.footer-section ul li:hover {
+  color: #FF6428;
+}

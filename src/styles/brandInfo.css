@@ -1,0 +1,132 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Satoshi', sans-serif;
+}
+
+.brand-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 70vh;
+  background: white;
+  justify-content: space-between;
+  /*padding: 40px 80px 0 80px;*/
+  box-sizing: border-box;
+ 
+  
+  position: relative; 
+}
+
+/* LEFT SIDE */
+.brand-text {
+  width: 53vw;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+  
+}
+.the_info{
+  width:536px;
+justify-content: right;
+  text-align: center;
+ 
+  margin: 0 auto;
+
+
+}
+
+.back-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: #FF6428;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.back-link:hover {
+  color: #e55520;
+}
+
+/* Logo below Back to Home */
+.brand-logo {
+  display: flex;
+
+  align-items: center;
+  
+  margin-bottom: 100px;
+}
+
+.brand-logo img {
+  height: 28px;
+  margin-right: 8px;
+}
+#head_brand{
+  font-size: 56px;  
+  font-weight: 700;
+  font-style: bold;
+
+
+}
+#p_brand{
+  font-size: 16px;
+font-style: normal;
+  color: #666666;
+  font-weight: 500;
+
+
+}
+
+.brand-text .highlight {
+  color: #FF6428;
+}
+
+
+.brand-image{
+  width: 672px;
+  height: 459px;
+}
+/* Orange background container */
+.orange-bg {
+  width: 672px;
+  height: 459px;
+  border-bottom-right-radius: 151px;
+  border-bottom-left-radius: 360px;
+  background: linear-gradient(0deg, #FF5B1C 0%, #FF8C60 100%)!important;; 
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;   /* centers vertically */
+}
+
+.orange-bg > img:first-child {
+  width: 450px;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.4;
+  display: block;
+}
+
+/* Curve at bottom center */
+.curve1 {
+z-index: 100000;
+  position: absolute;
+  top: 420px;
+  left: 60%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 50%;
+  padding: 25px;
+}
+
+.curve1 img {
+  z-index: 100000;
+  height: 24px;
+}
+
